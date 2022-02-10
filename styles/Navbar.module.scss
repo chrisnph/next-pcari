@@ -1,0 +1,61 @@
+.nav {
+  background: transparent;
+  padding: 15px 3%;
+
+  & .nav__container {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+
+    & .nav__brand {
+      width: 173px;
+      height: 48px;
+      left: 103px;
+      top: 28px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 48px;
+      font-feature-settings: "pnum" on, "lnum" on;
+      color: #ffffff;
+    }
+
+    & .navlink {
+      width: 89px;
+      display: flex;
+      justify-content: flex-start;
+
+      & .navlink__anchor {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 32px;
+        color: #e6e6e6;
+        margin: 1px;
+        width: auto;
+        text-align: center;
+        position: relative;
+
+        &.active {
+          top: -5px;
+          font-weight: bold;
+          font-size: 16px;
+          // line-height: 24px;
+          font-feature-settings: "pnum" on, "lnum" on;
+
+          &:after {
+            content: "";
+            width: 80%;
+            height: 4px;
+            background: #fed530;
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+  }
+}

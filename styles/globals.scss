@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input.search::-webkit-search-cancel-button {
+  position: relative;
+  right: -5px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 5px solid #000000;
+  border-radius: 50%;
+  background: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) 43%,
+      #fff 45%,
+      #fff 55%,
+      rgba(0, 0, 0, 0) 57%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    linear-gradient(
+      135deg,
+      #000 0%,
+      #000 43%,
+      #fff 45%,
+      #fff 55%,
+      #000 57%,
+      #000 100%
+    );
+}
+
+@layer components {
+  .card {
+    @apply bg-cover bg-center bg-no-repeat h-[40vh] px-[24px] py-[26px] font-dm-sans mr-3 mb-3 cursor-pointer hover:contrast-[1.05];
+  }
+  .chat-bubble-top-right {
+    &:before {
+      content: "";
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      border-left: 10px solid transparent;
+      border-right: 10px solid #ffffff;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid #ffffff;
+      right: 0;
+      top: 0;
+      transform: translate(-0.5px, -50%);
+    }
+    @media (max-width: 1106.99px) {
+      &:before {
+        left: 0;
+        top: 0;
+        transform: translate(0.5px, -50%) rotate(90deg);
+      }
+    }
+  }
+}
